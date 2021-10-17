@@ -1,5 +1,3 @@
-
-
 // Object oreinted approach
 class ProjectInput {
     templateElement: HTMLTemplateElement;
@@ -9,8 +7,10 @@ class ProjectInput {
     descriptionInputElement: HTMLInputElement;
     peopleInputElement: HTMLInputElement;
 
-    constructor(){
-        this.templateElement = document.getElementById('project-input')! as HTMLTemplateElement;
+    constructor() {
+        this.templateElement = document.getElementById(
+            'project-input'
+            )! as HTMLTemplateElement;
         this.hostElement = document.getElementById('app')! as HTMLDivElement;
 
         const importedNode = document.importNode(
@@ -37,8 +37,8 @@ class ProjectInput {
             this.element.addEventListener('submit', this.submitHandler.bind(this));
         }
         private attach() {
-        this.hostElement.insertAdjacentElement('afterbegin', this.element);
+            this.hostElement.insertAdjacentElement('afterbegin', this.element);
     }
 }
 
-const prjInput = new ProjectInput;
+const prjInput = new ProjectInput();
