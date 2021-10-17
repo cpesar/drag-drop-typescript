@@ -48,7 +48,7 @@ class ProjectInput {
         this.configure();
         this.attach();
     }
-
+    // Error here for experimental decorators
         @autobind
         private submitHandler (event: Event){
             event.preventDefault();
