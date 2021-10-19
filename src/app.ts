@@ -219,7 +219,7 @@ class ProjectItem extends Component<HTMLUListElement, HTMLLIElement>
 
 
 // ProjectList Class 
-class ProjectList extends Component<HTMLDivElement, HTMLElement> {
+class ProjectList extends Component<HTMLDivElement, HTMLElement> implements DragTarget {
     assignedProjects: Project[];
 
 
@@ -231,6 +231,14 @@ class ProjectList extends Component<HTMLDivElement, HTMLElement> {
         this.configure();
         this.renderContent();
     }
+
+    dragOverHandler(event: DragEvent){
+        const listEl = this.element.querySelector('ul');
+    }
+
+    dropHandler(event: DragEvent){}
+
+    dragLeaveHandler(event: DragEvent){}
 
     private renderProjects (){
         const listEl = document.getElementById(
