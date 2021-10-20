@@ -40,14 +40,14 @@ export class ProjectList
     const listEl = this.element.querySelector("ul")!;
     listEl.classList.remove("droppable");
   }
-
+  @autobind
   configure() {
-    this.element.addEventListener("dragover", this.dragOverHandler.bind(this));
+    this.element.addEventListener("dragover", this.dragOverHandler);
     this.element.addEventListener(
       "dragleave",
       this.dragLeaveHandler.bind(this)
     );
-    this.element.addEventListener("drop", this.dropHandler.bind(this));
+    this.element.addEventListener("drop", this.dropHandler);
 
     projectState.addListener((projects: Project[]) => {
       const relevantProjects = projects.filter((prj) => {
