@@ -1,5 +1,12 @@
+import { Component } from './base-component';
+import { Validatable, validate } from '../util/validation';
+// import { autobind } from '../decorators/autobind';
+import { projectState } from '../state/project-state';
+
+
+
 // Project Input Class- Object oreinted approach
-class ProjectInput extends Component <HTMLDivElement, HTMLFormElement> {
+export class ProjectInput extends Component <HTMLDivElement, HTMLFormElement> {
   titleInputElement: HTMLInputElement;
   descriptionInputElement: HTMLInputElement;
   peopleInputElement: HTMLInputElement;
