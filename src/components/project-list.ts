@@ -1,7 +1,7 @@
 import { DragTarget } from '../models/drag-drop';
 import { Project, ProjectStatus } from '../models/projects';
 import { Component } from './base-component';
-// import { autobind } from '../decorators/autobind';
+import { autobind } from '../decorators/autobind';
 import { projectState } from '../state/project-state';
 import { ProjectItem } from './project-item';
 
@@ -20,7 +20,7 @@ export class ProjectList extends Component<HTMLDivElement, HTMLElement> implemen
       this.configure();
       this.renderContent();
   }
-  // @autobind
+  @autobind
   dragOverHandler(event: DragEvent){
       if(event.dataTransfer && event.dataTransfer.types[0] === 'text/plain'){
           event.preventDefault();
@@ -28,7 +28,7 @@ export class ProjectList extends Component<HTMLDivElement, HTMLElement> implemen
           listEl.classList.add('droppable');
       }
   }
-  // @autobind
+  @autobind
   dropHandler(event: DragEvent){
       const prjId = event.dataTransfer!.getData('text/plain');
       projectState.moveProject(

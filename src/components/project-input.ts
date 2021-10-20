@@ -1,6 +1,6 @@
 import { Component } from './base-component';
 import { Validatable, validate } from '../util/validation';
-// import { autobind } from '../decorators/autobind';
+import { autobind } from '../decorators/autobind';
 import { projectState } from '../state/project-state';
 
 
@@ -72,7 +72,7 @@ export class ProjectInput extends Component <HTMLDivElement, HTMLFormElement> {
 
 
   // Error here for experimental decorators
-      // @autobind
+      @autobind
       private submitHandler (event: Event){
           event.preventDefault();
           // console.log(this.titleInputElement.value);

@@ -1,7 +1,7 @@
 import { Draggable } from '../models/drag-drop';
 import { Project } from '../models/projects';
 import { Component } from './base-component';
-// import { autobind } from '../decorators/autobind';
+import { autobind } from '../decorators/autobind';
 
 
 
@@ -26,7 +26,7 @@ export class ProjectItem extends Component<HTMLUListElement, HTMLLIElement>
         this.renderContent();
     }
 
-    // @autobind
+    @autobind
     dragStartHandler(event: DragEvent){
         event.dataTransfer!.setData('text/plain', this.project.id);
         event.dataTransfer!.effectAllowed = 'move';
